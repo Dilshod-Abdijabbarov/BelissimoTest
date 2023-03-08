@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IRepository\IRepository.csproj" />
-    <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\Data\DatabaseContext.csproj" />
+    <ProjectReference Include="..\Domian\Domian.csproj" />
   </ItemGroup>
 
 </Project>

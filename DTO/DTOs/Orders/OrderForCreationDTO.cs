@@ -1,11 +1,5 @@
-﻿using Domian.Entities;
-using Domian.Enums;
-using System;
-using System.Collections.Generic;
+﻿using Domian.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.DTOs.Orders
 {

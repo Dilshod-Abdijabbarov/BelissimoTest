@@ -1,4 +1,5 @@
 using DatabaseContext;
+using DatabaseContext.Data;
 using Domian.Enums;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;

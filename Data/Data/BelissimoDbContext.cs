@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 
-namespace DatabaseContext
+namespace DatabaseContext.Data
 {
     public class BelissimoDbContext : DbContext
     {
@@ -11,7 +11,7 @@ namespace DatabaseContext
         {
 
         }
-   
+
         public DbSet<User> Users { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Food> Foods { get; set; }

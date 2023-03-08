@@ -1,12 +1,7 @@
 ﻿using Domian.Configurations;
 using Domian.Entities;
 using Services.DTOs.Baskets;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.IServies.Baskets
 {
