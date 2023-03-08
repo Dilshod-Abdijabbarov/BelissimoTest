@@ -24,5 +24,7 @@ namespace Services.IServies.Users
         ValueTask<IEnumerable<UserForViewDTO>> GetAllAsync(
             PaginationParams @params,
             Expression<Func<User, bool>> expression = null);
+
+        ValueTask <bool> ChangePasswordAsync(UserForChangePasswordDTO userForChangePasswordDTO);
     }
 }

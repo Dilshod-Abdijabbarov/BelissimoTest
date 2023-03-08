@@ -5,7 +5,7 @@ using IRepository.IGenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs.Categories;
 using Services.Exceptions;
-using Services.Extentions;
+using Services.Extensions;
 using Services.IServies.Categories;
 using System.Linq.Expressions;
 
@@ -49,7 +49,7 @@ namespace Services.Services.Categories
 
         public async ValueTask<IEnumerable<CategoryForViewDTO>> GetAllAsync(PaginationParams @params, Expression<Func<Category, bool>> expression = null)
         {
-            var categories = categoryRepository.GetAllAsync(expression: expression, isTracking: false);
+            var categories = categoryRepository.GetAllAsync(expression: expression, isTracking: false,includes:new string[] {"Foods"});
 
             return mapper.Map<IEnumerable<CategoryForViewDTO>>(await categories.ToPagedList(@params).ToListAsync());      
         }

@@ -8,9 +8,9 @@ namespace Domian.Enums
 {
         public enum UserRole
         {
+            Admin,
             User,
-            Courier,
-            Admin
+            Courier
         }
     
 }

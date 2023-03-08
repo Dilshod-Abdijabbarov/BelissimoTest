@@ -49,7 +49,7 @@ namespace Repository.GenericRepository
             return query;
         }
 
-        public async ValueTask<T> GetAsync(Expression<Func<T, bool>> expression, string[] includes = null)
+        public async ValueTask<T> GetAsync(Expression<Func<T, bool>> expression,string[] includes = null)
         => await GetAllAsync(expression, includes, false).FirstOrDefaultAsync();
 
         public T Update(T entity) 

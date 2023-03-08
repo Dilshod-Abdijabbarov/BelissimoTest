@@ -5,7 +5,7 @@ using IRepository.IGenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs.Foods;
 using Services.Exceptions;
-using Services.Extentions;
+using Services.Extensions;
 using Services.IServies.Foods;
 using System.Linq.Expressions;
 

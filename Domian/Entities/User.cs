@@ -10,10 +10,12 @@ namespace Domian.Entities
 {
     public class User : Auditable
     {
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string PhoneNumer { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
         public UserRole Role { get; set; }
-        
     }
   
 }

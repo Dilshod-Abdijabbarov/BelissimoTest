@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domian.Enums
+namespace Services.DTOs.Users
 {
-        public enum OrderType
-        {
-            Delivery,
-            NoDelivery
-        }
+    public class AppSettings
+    {
+        public string SecretKey { get; set; }
+    }
 }

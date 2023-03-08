@@ -22,8 +22,7 @@ namespace Services.DTOs.Orders
         [Required]
         public int BasketId { get; set; }
         [Required]
-        public int CourierId { get; set; }
-        [Required]
-        public int BnachId { get; set; }
+        public int BranchId { get; set; }
+        public DateTime? UpdatedAt { get; set; } = DateTime.Now;
     }
 }

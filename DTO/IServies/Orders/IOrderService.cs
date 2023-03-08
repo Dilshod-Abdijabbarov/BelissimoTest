@@ -20,7 +20,7 @@ namespace Services.IServies.Orders
 
         ValueTask<OrderForViewDTO> GetAsync(Expression<Func<Order,bool>> expression);
 
-        ValueTask<OrderForViewDTO> GetAllAsync(PaginationParams @params,
+        ValueTask<IEnumerable<OrderForViewDTO>> GetAllAsync(PaginationParams @params,
             Expression<Func<Order,bool>> expression =null);
     }
 }

@@ -10,7 +10,9 @@ namespace Services.DTOs.Users
 {
     public class UserForViewDTO
     {
-        public string Name { get; set; }
-        public string PhoneNumer { get; set; }
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public UserRole Role { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using IRepository.IGenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs.Branchies;
 using Services.Exceptions;
-using Services.Extentions;
+using Services.Extensions;
 using Services.IServies.Branchies;
 using System.Linq.Expressions;
 

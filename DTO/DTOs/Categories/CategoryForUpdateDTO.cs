@@ -12,5 +12,6 @@ namespace Services.DTOs.Categories
     {
         [Required]
         public string Content { get; set; }
+        public DateTime? UpdatedAt { get; set; } = DateTime.Now;
     }
 }

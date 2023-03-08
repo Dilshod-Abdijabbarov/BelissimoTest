@@ -10,5 +10,6 @@ namespace IRepository.IUserRepository
 {
     public interface IUserRepositoryAsync : IGenericRepositoryAsync<User>
     {
+        Task<User> LoginAsync(string login, string password, bool traking, CancellationToken cancellationToken);
     }
 }

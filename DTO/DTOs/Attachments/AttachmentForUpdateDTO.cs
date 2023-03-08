@@ -13,5 +13,6 @@ namespace Services.DTOs.Attachments
         public string FullPath { get; set; }
         [Required]
         public Stream File { get; set; }
+        public DateTime? UpdatedAt { get; set; } = DateTime.Now;
     }
 }

@@ -1,11 +1,12 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using Domian.Configurations;
 using Domian.Entities;
 using IRepository.IGenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs.Attachments;
 using Services.Exceptions;
-using Services.Extentions;
+using Services.Extensions;
 using Services.IServies.Attachments;
 using System.Linq.Expressions;
 

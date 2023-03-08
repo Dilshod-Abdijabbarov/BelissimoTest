@@ -5,7 +5,7 @@ using IRepository.IGenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs.Orders;
 using Services.Exceptions;
-using Services.Extentions;
+using Services.Extensions;
 using Services.IServies.Orders;
 using System.Linq.Expressions;
 
@@ -25,7 +25,7 @@ namespace Services.Services.Orders
 
         public async ValueTask<OrderForViewDTO> CreateAsync(OrderForCreationDTO orderForCreationDTO)
         {
-            //var alreadyOrder = await orderRepository.GetAsync(????);
+           // var alreadyOrder = await orderRepository.GetAsync(x=>x.);
 
             var order = await orderRepository.CreateAsync(mapper.Map<Order>(orderForCreationDTO));
 
@@ -46,14 +46,14 @@ namespace Services.Services.Orders
             return isDelete;
         }
 
-        public async ValueTask<OrderForViewDTO> GetAllAsync(PaginationParams @params, Expression<Func<Order, bool>> expression = null)
+        public async ValueTask<IEnumerable<OrderForViewDTO>> GetAllAsync(PaginationParams @params, Expression<Func<Order, bool>> expression = null)
         {
             var orders = orderRepository.GetAllAsync(expression: expression, isTracking: false);
 
             if (orders == null)
                 throw new BelissimoCloneWPFException(404, "Orders Not found");
 
-            return mapper.Map<OrderForViewDTO>(await orders.ToPagedList(@params).ToListAsync());
+            return mapper.Map<IEnumerable<OrderForViewDTO>>(await orders.ToPagedList(@params).ToListAsync());
         }
 
         public async ValueTask<OrderForViewDTO> GetAsync(Expression<Func<Order, bool>> expression)

@@ -5,14 +5,9 @@ using IRepository.IGenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs.Users;
 using Services.Exceptions;
-using Services.Extentions;
+using Services.Extensions;
 using Services.IServies.Users;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Services.Users
 {
@@ -28,7 +23,7 @@ namespace Services.Services.Users
 
         public async ValueTask<UserForViewDTO> CreateAsync(UserForCreationDTO userForCreationDTO)
         {
-           var alreadyuser = await  userRepository.GetAsync(c=>c.Name==userForCreationDTO.Name);
+           var alreadyuser = await  userRepository.GetAsync(c=>c.FirstName==userForCreationDTO.FirstName);
 
             if (alreadyuser != null)
                 throw new BelissimoCloneWPFException(400, "User with such username already exist");
@@ -81,6 +76,25 @@ namespace Services.Services.Users
             await userRepository.SaveChangesAsync();
 
             return mapper.Map<UserForViewDTO>(userData);
+        }
+
+       public  async ValueTask<bool> ChangePasswordAsync(UserForChangePasswordDTO changePassword)
+        {
+            var user = await userRepository.GetAsync(x => x.Login.Equals(changePassword.Login) && x.Password.Equals(changePassword.OldPassword));
+
+            if (user == null)
+                throw new BelissimoCloneWPFException(400, "User Not Found");
+
+            if (user.Password == changePassword.NewPassword)
+                throw new BelissimoCloneWPFException(400, "Password in Incorrect");
+
+            user.Password=changePassword.NewPassword;
+
+            userRepository.Update(user);
+
+            await userRepository.SaveChangesAsync();
+
+            return true;  
         }
     }
 }

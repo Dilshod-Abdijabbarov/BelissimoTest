@@ -5,7 +5,7 @@ using IRepository.IGenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs.FoodOrders;
 using Services.Exceptions;
-using Services.Extentions;
+using Services.Extensions;
 using Services.IServies.FoodOrders;
 using Services.IServies.Foods;
 using System;

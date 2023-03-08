@@ -16,5 +16,6 @@ namespace Services.DTOs.FoodOrders
         public int FoodId { get; set; }
         [Required]
         public int BasketId { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

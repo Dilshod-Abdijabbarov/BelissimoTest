@@ -15,5 +15,6 @@ namespace Services.DTOs.Branchies
         public string Operator { get; set; }
         [Required]
         public string Location { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

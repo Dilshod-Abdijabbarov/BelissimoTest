@@ -20,5 +20,6 @@ namespace Services.DTOs.Foods
         public int CategoryId { get; set; }
         [Required]
         public int AttachmentId { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

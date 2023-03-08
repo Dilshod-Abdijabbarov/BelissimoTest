@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.DTOs.Baskets
+namespace Services.DTOs.Users
 {
-    public class BasketForUpdateDTO
+    public class UserForLoginDTO
     {
+
         [Required]
-        public int UserId { get; set; }
-        public DateTime? UpdatedAt { get; set; } = DateTime.Now;
+        public string Login { get; set; }
+        [Required]
+        public string Password { get; set; }    
     }
 }

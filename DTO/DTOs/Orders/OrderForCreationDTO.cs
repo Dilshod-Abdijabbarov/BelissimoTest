@@ -21,10 +21,9 @@ namespace Services.DTOs.Orders
         [Required]
         public PaymentType PaymentType { get; set; }
         [Required]
-        public int BasketId { get; set; }
+        public int BasketId { get; set; }       
         [Required]
-        public int CourierId { get; set; }
-        [Required]
-        public int BnachId { get; set; }
+        public int BranchId { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

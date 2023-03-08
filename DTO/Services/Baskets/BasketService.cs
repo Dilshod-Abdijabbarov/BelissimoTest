@@ -5,7 +5,7 @@ using IRepository.IGenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs.Baskets;
 using Services.Exceptions;
-using Services.Extentions;
+using Services.Extensions;
 using Services.IServies.Baskets;
 using System;
 using System.Collections.Generic;
@@ -52,9 +52,10 @@ namespace Services.Services.Baskets
             return isDelete;
         }
 
-        public async ValueTask<IEnumerable<BasketForViewDTO>> GetAllAsync(PaginationParams @params, Expression<Func<Basket, bool>> expression = null)
+        public async ValueTask<IEnumerable<BasketForViewDTO>> GetAllAsync(PaginationParams @params, Expression<Func<Basket, bool>> expression)
         {
-           var baskets = basketRepository.GetAllAsync(expression:expression,isTracking:false);
+
+           var baskets = basketRepository.GetAllAsync(expression: expression, isTracking: false, includes:new string[]{ "FoodOrders" });
 
             if (baskets == null)
                 throw new BelissimoCloneWPFException(404, "Basket Not Found");
